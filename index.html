@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Card</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://kit.fontawesome.com/d2ca914d90.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="text">
+			<h1>NIKE</h1>
+			<p>Nike Zoom fly 3</p>
+			<p>Price : $250</p>
+			<p>Size : 8</p>
+			<div>
+				<p>Color : </p>
+				<span class="active" style="--span : #FD4536" onclick="active(1)"></span>
+				<span style="--span : #455E6F" onclick="active(2)"></span>
+				<span style="--span : #6F6664" onclick="active(3)"></span>
+				<span style="--span : #8D3E7D" onclick="active(4)"></span>
+			</div>
+			<a href="#">BUY</a>
+		</div>
+		<div>
+			<div class="img">
+				<div class="img1">
+					<img src="./image/img1.png">
+					<img src="./image/img2.png">
+					<img src="./image/img3.png">
+					<img src="./image/img4.png">
+				</div>
+			</div>
+			<div class="controller">
+				<h1 style="font-size: 24px" onclick="move(-1)"><i class="fas fa-arrow-left"></i></h1>
+				<span class="active" onclick="active(1)"></span>
+				<span onclick="active(2)"></span>
+				<span onclick="active(3)"></span>
+				<span onclick="active(4)"></span>
+				<h1 style="font-size: 24px" onclick="move(1)"><i class="fas fa-arrow-right"></i></h1>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let pre = 1;
+		let con = document.querySelector("body > div > div:nth-child(2) > div.img > div");
+		let span = document.querySelectorAll("body > div > div:nth-child(2) > div.controller > span");
+		let col = document.querySelectorAll("body > div > div.text > div > span");
+		let color = ["#FD4536","#455E6F","#6F6664","#8D3E7D"];
+		const active = c =>{
+			let a = -1 * (c - 1) * 100;
+			pre = c;
+			con.style.marginLeft = a + "%";
+			for(let i=1;i<=span.length;i++)
+			{
+				span[i-1].classList.remove('active');
+				col[i-1].classList.remove('active');
+			}
+			document.querySelector(`body > div > div:nth-child(2) > div.controller > span:nth-child(${pre+1})`).classList.add('active');
+			document.querySelector(`body > div > div.text > div > span:nth-child(${pre+1})`).classList.add('active');
+			document.documentElement.style.setProperty('--color', color[pre-1]);
+		}
+		const move = v =>{
+			pre += v;
+			if(pre==0)
+				pre = 1;
+			else if(pre==5)
+				pre = 4;
+			active(pre);
+		}
+	</script>
+</body>
+</html>

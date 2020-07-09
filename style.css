@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Modak&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', consolas;
+}
+:root{
+	--color: #FD4536;
+}
+body{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body::before{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40%;
+	height: 100%;
+	content: '';
+	background: var(--color);
+	clip-path: polygon(55% 0,100% 0,100% 100%,0% 100%);
+	transition: 0.7s;
+}
+.container{
+	position: relative;
+	width: 80%;
+	height: 80%;
+	box-shadow: 10px 10px 25px #0003;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container div.text{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width:50%;
+	height: 100%;
+}
+.container div:nth-child(2){
+	width: 40%;
+}
+.container div:nth-child(2) div.img{
+	position: relative;
+	width: 100%;
+	height: calc(100% - 50px);
+	display: flex;
+	overflow: hidden;
+}
+.container div:nth-child(2) div.img .img1{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	transition: 0.5s;
+}
+.container div:nth-child(2) div.img img{
+	position: relative;
+	min-width: 100%;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	transform: rotate(-25deg);
+	margin-top: -80px;
+	display: inline;
+}
+.container div:nth-child(2) div.controller{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -30px;
+	height: 40px;
+}
+.container div:nth-child(2) div.controller > *{
+	margin: 0 8px;
+	cursor: pointer;
+}
+.container div:nth-child(2) div.controller span{
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1.5px solid #000;
+	transition: 0.5s;
+}
+.container div:nth-child(2) div.controller span.active{
+	position: relative;
+	width: 20px;
+	height: 10px;
+	border-radius: 10px;
+	background: #000;
+}
+
+.container .text{
+	position: relative;
+	padding: 50px 0;
+}
+.container .text::before{
+	position: absolute;
+	content: 'NIKE';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 200px;
+	letter-spacing: 30px;
+	color: #0001;
+	font-family: 'Russo One', sans-serif;
+	z-index: -1;
+}
+.container .text h1{
+	font-size: 70px;
+	font-family: 'Russo One', cursive;
+	margin-bottom: 10px;
+}
+.container .text p:nth-child(2){
+	font-size: 35px;
+}
+.container .text p:nth-child(3),
+.container .text p:nth-child(4){
+	font-size: 25px;
+	margin-bottom: 8px;
+}
+.container div.text div{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+.container div.text div p{
+	font-size: 25px;
+	margin-right: 10px;
+	font-weight: normal;
+}
+.container div.text div span{
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: var(--span);
+	margin: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.container div.text div span.active{
+	border: 2.5px solid #000;
+}
+.container div.text a{
+	display: inline-block;
+	margin-top: 10px;
+	height: 45px;
+	width: 120px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid var(--color);
+	text-decoration: none;
+	font-size: 18px;
+	color: #000;
+	border-radius: 25px;
+	transition: 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container div.text a:hover{
+	color: #fff;
+	background: var(--color);
+}
